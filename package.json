@@ -1,12 +1,15 @@
 {
-  "name": "winston-request-logger",
+  "name": "@nvite/winston-request-logger",
   "description": "Winston based http request logger for express.",
-  "version": "0.1.1",
+  "version": "1.0.7",
   "homepage": "https://github.com/wolfeidau/winston-request-logger",
   "author": {
     "name": "Mark Wolfe",
     "email": "mark@wolfe.id.au",
     "url": "http://www.wolfe.id.au/"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   },
   "repository": {
     "type": "git",
@@ -29,8 +32,9 @@
     "test": "grunt test"
   },
   "dependencies": {
-    "winston": "*",
-    "colors": "*"
+    "colors": "*",
+    "useragent": "*",
+    "winston": "*"
   },
   "devDependencies": {
     "grunt-simple-mocha": "~0.4.0",

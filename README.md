@@ -20,10 +20,10 @@ with colors while in development or test.
 You can optionally specify a second argument to `create(logger, [format])` to customize the object sent to Winston:
 
 ```javascript
-	app.use(require('winston-request-logger').create(logger, {
-		'responseTime': ':responseTime ms',		// outputs '5 ms'
-		'url': ':url[pathname]'					// outputs '/some/path'
-	}));
+  app.use(require('winston-request-logger').create(logger, {
+    'responseTime': ':responseTime ms',   // outputs '5 ms'
+    'url': ':url[pathname]'         // outputs '/some/path'
+  }));
 ```
 
 ### Format tokens:
@@ -33,11 +33,19 @@ You can optionally specify a second argument to `create(logger, [format])` to cu
 * `:url[segment]` - Segment of the URL requested (Refer to the [url module](http://nodejs.org/api/url.html) for options).
 * `:responseTime` - Time it took for the response (in milliseconds).
 * `:ip` - The client's IP address (looks to `X-forwarded-for` header first).
+* `:userAgent` - The client's browser agent (parsed with [`useragent`](https://github.com/3rd-Eden/useragent).
 
 
-## Contributing
+## Contributors
+<table><tbody>
+<tr><th align="left">Mark Wolfe</th><td><a href="https://github.com/wolfeidau">GitHub/wolfeidau</a></td><td><a href="http://twitter.com/wolfeidau">Twitter/@wolfeidau</a></td></tr>
+<tr><th align="left">Evan Dudla</th><td><a href="https://github.com/epd">GitHub/evNN</a></td><td><a href="http://twitter.com/evandudla">Twitter/@evandudla</a></td></tr>
+</tbody></table>
+
+### Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [grunt](https://github.com/gruntjs/grunt).
 
+
 ## License
-Copyright (c) 2013 Mark Wolfe  
+Copyright (c) 2013 Mark Wolfe
 Licensed under the MIT license.
