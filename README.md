@@ -12,7 +12,7 @@ with colors while in development or test.
     app.configure('development', 'test', function(){
         // Request Logging
         var logger = new (winston.Logger)({ transports: [ new (winston.transports.Console)({colorize:true}) ] });
-        app.use(require('winston-request-logger').create(logger));
+        app.use(require('@nvite/winston-request-logger').create(logger));
     });
 ```
 
@@ -20,7 +20,7 @@ with colors while in development or test.
 You can optionally specify a second argument to `create(logger, [format])` to customize the object sent to Winston:
 
 ```javascript
-  app.use(require('winston-request-logger').create(logger, {
+  app.use(require('@nvite/winston-request-logger').create(logger, {
     'responseTime': ':responseTime ms',   // outputs '5 ms'
     'url': ':url[pathname]'         // outputs '/some/path'
   }));
